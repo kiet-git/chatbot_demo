@@ -10,3 +10,4 @@ tiktoken
 sentence-transformers
 fastapi
 reportlab
+docx

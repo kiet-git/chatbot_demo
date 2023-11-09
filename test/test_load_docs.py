@@ -4,7 +4,6 @@ import os
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from docx import Document
-import shutil
 
 
 # Define the directory path for your test documents
