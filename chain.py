@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from langchain.document_loaders import PyPDFLoader
 from langchain.document_loaders import Docx2txtLoader
 from langchain.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceHubEmbeddings, OpenAIEmbeddings
 from langchain.llms import HuggingFaceHub, OpenAI
 from langchain.vectorstores import Chroma
@@ -44,13 +44,14 @@ def load_documents(doc_path):
                     documents.extend(loader.load())
     return documents
 
-def split_documents(documents):
-    text_splitter = CharacterTextSplitter(
-        chunk_size=1000, 
-        chunk_overlap=200
+def split_documents(documents, chunk_size=1000, chunk_overlap=200):
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size, 
+        chunk_overlap=chunk_overlap
     )
-    documents = text_splitter.split_documents(documents)
-    return documents
+    chunks = text_splitter.split_documents(documents)
+    print(chunks)
+    return chunks
 
 def load_vectordb():
     vectordb = None

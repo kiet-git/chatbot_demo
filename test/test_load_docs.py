@@ -7,7 +7,7 @@ from docx import Document
 import shutil
 
 # Define the directory path for your test documents
-TEST_DIR = "./tests/test_documents/"
+TEST_DIR = "./test/test_documents/"
 
 class TestLoadDocuments(unittest.TestCase):
 
@@ -104,7 +104,3 @@ class TestLoadDocuments(unittest.TestCase):
         # Check if the content of the subdocument is present in the loaded documents
         subdocument_content = "Test subdocument content"
         self.assertTrue(any(subdocument_content in doc.page_content for doc in documents))
-
-
-if __name__ == '__main__':
-    unittest.main()
