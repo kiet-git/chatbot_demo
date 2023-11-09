@@ -1,0 +1,11 @@
+#python==3.11
+langchain
+openai
+chromadb
+python-dotenv
+pypdf
+openai
+huggingface_hub
+tiktoken
+sentence-transformers
+fastapi
