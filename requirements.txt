@@ -11,3 +11,4 @@ sentence-transformers
 fastapi
 reportlab
 python-docx
+docx2txt
