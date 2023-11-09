@@ -10,4 +10,4 @@ tiktoken
 sentence-transformers
 fastapi
 reportlab
-docx
+python-docx
